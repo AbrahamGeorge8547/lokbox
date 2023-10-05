@@ -15,5 +15,9 @@ func setupRouter(db *bbolt.DB) *gin.Engine {
 	r.GET("/secrets", func(c *gin.Context) {
 		handleFetchSecrets(c, db)
 	})
+
+	r.GET("/urls", func(c *gin.Context) {
+		handleFetchAllURLs(c, db)
+	})
 	return r
 }
